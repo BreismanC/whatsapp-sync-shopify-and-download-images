@@ -10,9 +10,9 @@ interface ImageSrc {
 }
 
 const imageSrc: ImageSrc = {
-  connecting: "./src/assets/loader.gif",
-  disconnected: "./src/assets/cross.svg",
-  authenticated: "./src/assets/check.svg",
+  connecting: "/loader.gif",
+  disconnected: "/cross.svg",
+  authenticated: "/check.svg",
 };
 
 export const QrCode = ({ qr, message }: props) => {

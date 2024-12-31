@@ -143,3 +143,5 @@ Thumbs.db
 *.tmp
 
 server/persistent_volume/
+
+server/public/

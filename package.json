@@ -3,11 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.9.0"
+  },
   "scripts": {
     "client:dev": "vite",
     "server:dev": "cd ./server && npm run dev",
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "build": "tsc -b && vite build",
+    "move:build": "node moveBuild.js",
+    "start:prod": "npm run build && npm run move:build && cd ./server && npm run build && npm run start:prod",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -41,6 +46,7 @@
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
+    "fs-extra": "^11.2.0",
     "globals": "^15.14.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",

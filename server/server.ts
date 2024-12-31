@@ -35,7 +35,7 @@ export class Server {
     this.app.use("/api/v1", this.router);
 
     // Serve static files
-    this.app.use(express.static("dist"));
+    this.app.use(express.static("public"));
 
     this.httpServer.listen(this.port, "0.0.0.0", () => {
       console.log(`Server running on port ${this.port}`);
