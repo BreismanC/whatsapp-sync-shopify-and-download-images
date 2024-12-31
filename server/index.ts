@@ -2,6 +2,7 @@ import { envVariables } from "./config";
 import { Server } from "./server";
 import { WhatsappService } from "./services";
 import { AppRoutes } from "./routes/server.routes";
+import { CronjobService } from "./services";
 
 async function main() {
   const whatsappService = new WhatsappService();
@@ -39,6 +40,10 @@ async function main() {
       });
     }
   });
+
+  // Tarea programada con CronJob
+  const cronjob = new CronjobService();
+  cronjob.run();
 }
 
 main();

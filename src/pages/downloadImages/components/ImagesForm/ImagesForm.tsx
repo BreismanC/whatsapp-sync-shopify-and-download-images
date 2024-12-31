@@ -11,8 +11,6 @@ export const ImagesForm = () => {
   const { toast } = useToast();
   const { handleSubmit, loading, error } = useDownloadImagesFetch(toast);
 
-  console.log({ imagesForm });
-
   return (
     <form onSubmit={(e) => handleSubmit(e, imagesForm)}>
       <div className="flex flex-col space-y-4 w-[90%] mx-auto">

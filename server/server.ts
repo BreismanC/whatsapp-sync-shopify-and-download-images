@@ -1,7 +1,6 @@
 import express, { Router, urlencoded } from "express";
 import { Server as HTTPServer } from "node:http";
 import { Server as IOServer } from "socket.io";
-// import cors from "cors";
 import { ServerOptions } from "./interfaces";
 import { envVariables } from "./config";
 

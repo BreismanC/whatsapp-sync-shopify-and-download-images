@@ -142,4 +142,4 @@ Thumbs.db
 *.bak
 *.tmp
 
-server/auth
+server/persistent_volume/
