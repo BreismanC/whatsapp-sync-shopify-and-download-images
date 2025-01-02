@@ -230,6 +230,7 @@ export class WhatsappService {
         );
     } catch (error) {
       if (error instanceof Error) {
+        this.productComposition = [];
         console.log(
           `Ha ocurrido un error consultando el SKU en la base de datos, error: ${error}`
         );

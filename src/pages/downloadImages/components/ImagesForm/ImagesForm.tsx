@@ -59,7 +59,7 @@ export const ImagesForm = () => {
         >
           {loading ? (
             <div className="w-full mx-aut flex justify-center">
-              <img src="/src/assets/loader.gif" className="w-5 h-5" />
+              <img src="/loader.gif" className="w-5 h-5" />
             </div>
           ) : (
             <span>Descargar</span>

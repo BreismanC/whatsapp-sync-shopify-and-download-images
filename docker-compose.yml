@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+      - "5555:5555"
+    env_file:
+      - ./server/.env
+    volumes:
+      # - ./server/persistent_volume /app/persistent_volume       # Volumen para la base de datos SQLite, auth y logs
+      - type: volume
+        source: persistent_volume
+        target: /server/persistent_volume
+        volume:
+          nocopy: true
+
+volumes:
+  persistent_volume:

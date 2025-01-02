@@ -10,8 +10,10 @@
     "client:dev": "vite",
     "server:dev": "cd ./server && npm run dev",
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:install": "cd ./server && npm install",
     "build": "tsc -b && vite build",
     "move:build": "node moveBuild.js",
+    "build:prod": "npm run build && npm run move:build && cd ./server && npm run build",
     "start:prod": "npm run build && npm run move:build && cd ./server && npm run build && npm run start:prod",
     "lint": "eslint .",
     "preview": "vite preview"

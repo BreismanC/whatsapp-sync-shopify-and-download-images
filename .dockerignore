@@ -1,0 +1,16 @@
+node_modules
+server/node_modules
+dist
+server/dist
+server/auth
+logs
+server/logs
+.github
+.vscode
+*.sqlite
+*.db
+server/persistent_volume/*
+server/persistent_volume
+.env.production
+.env.example
+server/.env.example
