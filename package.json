@@ -9,8 +9,10 @@
   "scripts": {
     "client:dev": "vite",
     "server:dev": "cd ./server && npm run dev",
+    "dev:first": "npm install && npm run server:install && npm run server:generate && npm run dev",
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "server:install": "cd ./server && npm install",
+    "server:generate": "cd ./server && npm run prisma:generate",
     "build": "tsc -b && vite build",
     "move:build": "node moveBuild.js",
     "build:prod": "npm run build && npm run move:build && cd ./server && npm run build",
