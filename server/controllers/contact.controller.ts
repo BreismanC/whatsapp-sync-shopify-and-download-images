@@ -100,6 +100,10 @@ export class ContactController {
       // Descargar las imágenes de los mensajes
       await Promise.all(
         allMessages.map(async (msg) => {
+          if (!msg.message) {
+            return;
+          }
+
           if (!msg.message.imageMessage) {
             return;
           }
@@ -188,6 +192,7 @@ export class ContactController {
       });
     } catch (error) {
       // Eliminar los archivos temporales en caso de alguna falla
+      console.log("Ha ocurrido un error en el proceso, Error: ", error);
       try {
         fs.rmSync(imagesDir, { recursive: true, force: true });
         fs.rmSync(compressfolderPath, { recursive: true, force: true });
